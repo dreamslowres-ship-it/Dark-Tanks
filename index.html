@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#1a2a5a" />
+  <meta name="description" content="Night Tanks — Shooter 2D top-down con tanques personalizables" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <title>Night Tanks</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="ui-overlay">
+      <div id="main-menu" class="screen">
+        <h1>NIGHT TANKS</h1>
+        <p class="subtitle">Offline vs IA · Multijugador 2P · Custom skins</p>
+        <button id="btn-create-room" class="btn">Jugar (vs IA)</button>
+        <button id="btn-multiplayer" class="btn">Multijugador</button>
+        <button id="btn-depot" class="btn">Depósito</button>
+        <button id="btn-customization" class="btn">Personalizar</button>
+        <button id="btn-settings" class="btn secondary">Ajustes</button>
+        <p class="hint">Móvil: stick izq = mover · der = apuntar/disparar<br>PC: WASD + ratón · Zoom: + / −</p>
+      </div>
+
+      <div id="lobby" class="screen hidden">
+        <h2>Sala</h2>
+        <div id="player-list"></div>
+        <button id="btn-ready" class="btn">Listo</button>
+        <button id="btn-leave" class="btn secondary">Salir</button>
+        <div id="countdown" class="hidden">3</div>
+      </div>
+
+      <div id="hud" class="hidden">
+        <div class="hud-left">
+          <div id="health-bar"><div id="health-fill"></div></div>
+          <div id="status-display"></div>
+        </div>
+        <div class="hud-right">
+          <div id="score-display">Score: 0</div>
+          <div id="kills-display">Kills: 0</div>
+        </div>
+      </div>
+
+      <div id="zoom-controls" class="hidden">
+        <button id="btn-zoom-out" type="button">−</button>
+        <span id="zoom-label">2.3x</span>
+        <button id="btn-zoom-in" type="button">+</button>
+      </div>
+
+      <button id="btn-exit-game" class="btn-exit hidden">Menú</button>
+
+      <div id="joystick-left" class="joystick"></div>
+      <div id="joystick-right" class="joystick"></div>
+    </div>
+
+    <div id="install-banner" class="hidden">
+      <span>Instalar Night Tanks</span>
+      <button id="btn-install">Instalar</button>
+      <button id="btn-install-dismiss" style="background:#333;margin-left:4px">✕</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
