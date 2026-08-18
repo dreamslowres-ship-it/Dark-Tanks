@@ -1,0 +1,24 @@
+{
+  "totalPoints": 100,
+  "statCosts": {
+    "health": 1,
+    "speed": 2,
+    "damage": 3,
+    "fireRate": 4,
+    "projectileSpeed": 1
+  },
+  "defaults": {
+    "health": 100,
+    "speed": 120,
+    "damage": 20,
+    "fireRate": 4,
+    "projectileSpeed": 320
+  },
+  "limits": {
+    "health": { "min": 50, "max": 200 },
+    "speed": { "min": 60, "max": 220 },
+    "damage": { "min": 10, "max": 50 },
+    "fireRate": { "min": 1, "max": 10 },
+    "projectileSpeed": { "min": 150, "max": 500 }
+  }
+}

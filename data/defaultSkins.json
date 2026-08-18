@@ -1,0 +1,20 @@
+{
+  "skins": [
+    {
+      "id": "default",
+      "name": "Tanque Básico",
+      "body": null,
+      "weapon": null,
+      "projectile": null,
+      "trail": null,
+      "lamp": null,
+      "stats": {
+        "health": 100,
+        "speed": 120,
+        "damage": 20,
+        "fireRate": 4,
+        "projectileSpeed": 320
+      }
+    }
+  ]
+}
